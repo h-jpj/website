@@ -29,6 +29,19 @@ body {
   line-height: 1.6;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(217, 119, 6, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -88,6 +101,12 @@ body {
   line-height: 1.7;
 }
 
+.hero-note {
+  margin-top: 18px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 .store-buttons {
   display: flex;
   gap: 12px;
@@ -144,7 +163,7 @@ body {
   background: #1a1a1a;
   border-radius: 40px;
   padding: 12px;
-  box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+  box-shadow: 0 28px 60px rgba(41, 37, 36, 0.18);
 }
 
 @media (min-width: 768px) {
@@ -159,6 +178,10 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 28px;
+}
+
+#hero-screenshot {
+  transition: opacity 0.3s ease;
 }
 
 /* Features Section */
@@ -186,6 +209,10 @@ body {
 .feature {
   text-align: center;
   padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #fff 0%, #fffaf3 100%);
+  box-shadow: 0 10px 30px rgba(41, 37, 36, 0.05);
 }
 
 .feature-icon {
@@ -207,6 +234,118 @@ body {
 }
 
 /* Screenshots Section */
+.maker-note {
+  padding: 24px;
+  background: var(--bg);
+}
+
+.maker-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  border: 1px solid rgba(217, 119, 6, 0.15);
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fffdf8 0%, #fff7ed 100%);
+  box-shadow: 0 12px 36px rgba(41, 37, 36, 0.06);
+  text-align: center;
+}
+
+.maker-kicker {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.maker-card h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.maker-card p {
+  max-width: 650px;
+  margin: 0 auto 16px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.maker-signoff {
+  color: var(--text) !important;
+  font-weight: 700;
+}
+
+/* Updates Section */
+.updates {
+  padding: 80px 24px;
+  background: var(--surface);
+}
+
+.updates-content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-kicker,
+.update-date {
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.updates h2 {
+  font-size: 2rem;
+  margin: 8px 0 12px;
+}
+
+.updates-intro {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.updates-list {
+  display: grid;
+  gap: 20px;
+}
+
+.update-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #fff 0%, #fffaf3 100%);
+  box-shadow: 0 10px 30px rgba(41, 37, 36, 0.05);
+}
+
+.update-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.update-icons img {
+  width: 58px;
+  height: 58px;
+  padding: 10px;
+  border-radius: 18px;
+  background: var(--bg-alt);
+  border: 1px solid rgba(217, 119, 6, 0.12);
+}
+
+.update-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.update-card p:last-child {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
 .screenshots {
   padding: 80px 24px;
   background: var(--bg-alt);
@@ -220,83 +359,43 @@ body {
   color: var(--text);
 }
 
-.screenshot-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.carousel-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  background: var(--surface);
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: var(--text);
-  flex-shrink: 0;
-}
-
-.carousel-btn:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-}
-
-.carousel-track {
+.screenshot-gallery {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
   padding: 16px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.screenshot-gallery::-webkit-scrollbar {
+  height: 8px;
 }
 
-.carousel-img {
+.screenshot-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.screenshot-gallery::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.gallery-img {
   width: 220px;
   height: 440px;
   object-fit: cover;
   border-radius: 24px;
-  scroll-snap-align: center;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
-  .carousel-img {
+  .gallery-img {
     width: 260px;
     height: 520px;
   }
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.carousel-dots .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.carousel-dots .dot.active {
-  background: var(--primary);
 }
 
 /* Privacy Section */
@@ -337,9 +436,10 @@ body {
 
 /* Footer */
 footer {
-  background: var(--text);
-  color: white;
+  background: #f4ede2;
+  color: var(--text);
   padding: 48px 24px;
+  border-top: 1px solid var(--border);
 }
 
 .footer-content {
@@ -352,7 +452,12 @@ footer {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-blurb {
+  color: var(--text-secondary);
+  margin-bottom: 18px;
 }
 
 .footer-links {
@@ -360,13 +465,13 @@ footer {
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.8);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: white;
+  color: var(--text);
 }
 
 .footer-links span {
@@ -379,7 +484,8 @@ footer {
   opacity: 0.6;
 }
 
-/* Hero screenshot transition */
-#hero-screenshot {
-  transition: opacity 0.3s ease;
+@media (min-width: 768px) {
+  .maker-card {
+    padding: 56px;
+  }
 }
