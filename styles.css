@@ -140,6 +140,21 @@ body {
 .store-btn svg {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
+}
+
+.store-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.store-subtext {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 3px;
 }
 
 .store-btn.apple {
