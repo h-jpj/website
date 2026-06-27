@@ -355,6 +355,22 @@ body {
   margin-bottom: 10px;
 }
 
+.update-summary {
+  max-width: 620px;
+  margin: 0 auto;
+  padding-left: 1.1rem;
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.update-summary li + li {
+  margin-top: 10px;
+}
+
+.update-summary strong {
+  color: var(--text);
+}
+
 .update-card p:last-child {
   max-width: 620px;
   margin: 0 auto;
